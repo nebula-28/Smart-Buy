@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-HEADERS={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'}
+HEADERS={'User-Agent': ''}
 
 def clean_prod_name(usr):
     string1=re.sub('[^A-Za-z0-9]', ' ', str(usr))
