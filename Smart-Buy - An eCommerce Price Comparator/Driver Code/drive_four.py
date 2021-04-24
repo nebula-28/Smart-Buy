@@ -1,12 +1,12 @@
 #main program
 
-import requests #This will allow to send HTTP requests.
-import re ule  #This is to import regular expression mod.
-import time  #This module will help to use sleep().
-from bs4 import BeautifulSoup  #This is to import BeautifulSoup which will help to extract data from websites.
-import sys
-import math #math.trunc will remove floating decimals
-from operator import itemgetter
+import requests                   #This will allow to send HTTP requests.
+import re                         #This is to import regular expression module.
+import time                       #This module will help to use sleep().
+from bs4 import BeautifulSoup     #This is to import BeautifulSoup which will help to extract data from websites.
+import sys                        #To terminate the program
+import math                       #math.trunc will remove floating decimals
+from operator import itemgetter   #To sort the list of dictionaries
 
 
 HEADERS={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'}
@@ -191,7 +191,7 @@ def product_sepcification(fk_prod_link,am_prod_link,sc_prod_link,rd_prod_link):
     print('***********************************FLIPKART********************************************')
     
     if fk_prod_link!='Not Found':
-        fk_soup2=get_soup_object(fk_prod_link) 
+        fk_soup2=get_soup_object(fk_prod_link)  #Flipkart Soup Object 
         #print('Flipkart Specs')
         #Exrtracting Product Price
         try:
@@ -211,7 +211,7 @@ def product_sepcification(fk_prod_link,am_prod_link,sc_prod_link,rd_prod_link):
             rating="NA"
             print("Overall Rating = ", rating)
     else:
-            print("Product you are looking for is not found in Flipkart ! ")           #Flipkart Soup Object 
+            print("Product you are looking for is not found in Flipkart ! ")          
 
 
     print('**************************************AMAZON************************************************')
