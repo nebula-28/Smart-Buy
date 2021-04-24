@@ -304,10 +304,10 @@ product_name=clean_prod_name(usr_typed_name)
 am_url,fk_url,rd_url,sc_url=get_product_link(product_name)
 print('*************************************************************************************************************************')
 print("Searching your product in the below links.............")
-print("Amazon Search Results :           ",am_url)
-print("Flipkart Search Results :         ",fk_url)
-print("Reliance Digital Search Results : ",rd_url)
-print("Shop Clues Search Results :       ",sc_url)
+print("Amazon Search Results             :   ",am_url)
+print("Flipkart Search Results           :   ",fk_url)
+print("Reliance Digital Search Results   :   ",rd_url)
+print("Shop Clues Search Results         :   ",sc_url)
 print('*************************************************************************************************************************')
 
 print("Searching best match of your product..................")
@@ -331,6 +331,7 @@ rd_prod_link=reliance_digital(rd_soup,product_name)
 
 
 #Product Specifications:
+product_dictionary=product_sepcification(fk_prod_link,am_prod_link,sc_prod_link,rd_prod_link)
 #print(product_dictionary)
 #Finding the Product at the Cheapest Price 
 ordered_dictionary=sorted(product_dictionary, key=itemgetter('price'))
@@ -339,6 +340,7 @@ if ordered_dictionary[1]['price']!=999999999999:print(f"The product is available
 print(f"Please visit the link to view or purchase your product - {ordered_dictionary[0]['url']}")
 print('*****************************************************************************************************')
 print("The other rates & links are also listed below in increasing order of price: ")
+print()
 if ordered_dictionary[1]['price']!=999999999999:print(f"{ordered_dictionary[1]['e-com']} - ₹{ordered_dictionary[1]['price']}  @ {ordered_dictionary[1]['url']}")
 print('*****************************************************************************************************')
 if ordered_dictionary[2]['price']!=999999999999:print(f"{ordered_dictionary[2]['e-com']} - ₹{ordered_dictionary[2]['price']}  @ {ordered_dictionary[2]['url']}") 
@@ -348,5 +350,3 @@ print()
 print('You may also look at the Search Result Links for more product matches')
 print()
 print('******************************* THANKS FOR VISITING ! KEEP SHOPPING **********************************')
-
-
